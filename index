@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="tk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tebigat Dünýäsi</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+  background: #f4f4f4;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  width: 100%;
+  background: #1B4D3E;
+  color: white;
+  padding: 10px;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* HEADER */
+header {
+  height: 100vh;
+  background: linear-gradient(rgba(27,77,62,0.8), rgba(27,77,62,0.8)),
+              url('https://images.unsplash.com/photo-1503264116251-35a269479413');
+  background-size: cover;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* SECTIONS */
+section {
+  padding: 80px 20px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px solid #4A8B7F;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background: #e8f5f1;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background: white;
+  margin: 10% auto;
+  padding: 30px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 15px;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.close {
+  float: right;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* CONTACT */
+.contact {
+  background: #1B4D3E;
+  color: white;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <ul>
+    <li><a href="#home">Baş sahypa</a></li>
+    <li><a href="#services">Hyzmatlar</a></li>
+    <li><a href="#contact">Habarlaşmak</a></li>
+  </ul>
+</nav>
+
+<!-- HEADER -->
+<header id="home">
+  <div>
+    <h1>Tebigat Dünýäsi</h1>
+    <p>Ätiýaçlandyryş hyzmatlary</p>
+  </div>
+</header>
+
+<!-- SERVICES -->
+<section id="services">
+<h2>Ätiýaçlandyryş görnüşleri</h2>
+
+<div class="grid">
+
+<div class="card" onclick="openModal('Betbagtçylykly hadysalardan ätiýaçlandyryş', 'Siziň saglygyňyzy we ömrüňizi durmuşda ýa-da işiňizde bolup biljek ähli betbagtçylykly hadysalardan ätiýaçlandyryp berýäris.\n \nNyrh möçberleri: 0,25% - 1,2$ (işleýän hünäriňize görä üýtgeýär)')">Betbagtçylykly hadysalardan ätiýaçlandyryş</div>
+<div class="card" onclick="openModal('Buraw işlerini ätiýaçlandyryş', 'Buraw işleriňizi, buraw edýän enjamlaryňyzy we buraw edýän işgärleriňiziň saglygyny, raýat-hukuk jogapkärçiliklerini ätiýaçlandyryp berýäris. \n \n Nyrh möçberleri: 2% - 2,8%')">Buraw işlerini ätiýaçlandyryş</div>
+<div class="card" onclick="openModal('Daşaýjlaryň raýat-hukuk jogapkärçiligini ätiýaçlandyryş', 'Daşaýjylaryň (ekspeditorlaryň) ýükler üçin, maliýe çykdaýjylary üçin, üçünji taraplaryň öňündäki we ýolagçylaryň öňündäki raýat-hukuk jogapkärçiligini ätiýaçlandyryp berýäris.\n\n Nyrh möçberleri: 0,4% - 2% (ulaglaryň sanyna görä üýtgeýär)')">Daşaýjlaryň raýat-hukuk jogapkärçiligini ätiýaçlandyryş</div>
+<div class="card" onclick="openModal('Demir ýol ulag serişdelerini ätiýaçlandyryş', 'Siziň demir ýol ulag serişdeleriňizi hereket howpsuzlygynyň bozulmagyndan, ýangyndan, partlamadan, üçünji taraplaryň kanuna garşy hereketlerinden, tebigy betbagtçylyklardan we uçýan obýektleriň gaçmagyndan ätiýaçlandyryp berýäris.\n \n Nyrh möçberleri: 0,1% - 0,87%')">Demir ýol ulag serişdelerini ätiýaçlandyryş</div>
+<div class="card" onclick="openModal('Ekologiýa töwekgelçiliginden ätiýaçlandyryş', 'Üçünji şahslaryň emlägine zyýan ýetirmegiňizden, daşk gurşawa zyýan ýetirmegiňizden we ömre, saglyga zyýan ýetirmegiňizden ätiýaçlandyryp berýäris.\n\n Nyrh möçberleri: 0,4% - 0,5%')">Ekologiýa töwekgelçiliklerinden ätiýaçlandyryş</div>
+<div class="card" onclick="openModal('Emlägi we ony ulanyjylaryň raýat-hukuk jopakräçiligini ätiýaçlandyryş', 'Siziň ýaşaýyş jaýlaryňyzy, öý emläkleriňizi, raýat-hukuk jogapkärçiligi ätiýaçlandyryp berýäris.\n\n Nyrh möçberleri: 0,55% - 2,5% (Emlägiň ýerleşýän ýerine görä üýtgeýär)')">Emlägi we ony ulanyjylaryň raýat-hukuk jopakräçiligini ätiýaçlandyryş</div>
+<div class="card" onclick="openModal('Gurluşyk-gurnaýyş işlerini ätiýaçlandyryş', 'Siziň gurluşyk işleriňizi, obýektleriňizi heläk bolmagyndan, ýitirilmeginden ýa-da olara zeper ýetmeginden, üçünji taraplaryň öňündäki raýat-hukuk jogapkärçiligini we işe girizilenden soňky kepillendiriş borçnamalarynny ätiýaçlandyryp berýäris.\n\n Nyrh möçberleri: 0,1% - 0,2%')">Gurluşyk-gurnaýyş işlerini ätiýaçlandyryş</div>
+<div class="card" onclick="openModal('Halkara ýük daşamalaryny amala aşyrýan daşaýjylaryň raýat-hukuk jogapkärçiligini ätiýaçlandyryş', 'Daşary ýurtlara eksport, import edýän ýükleriňiziň öňündäki raýat-hukuk jogapkräçiligi ätiýaçlandyryp berýäris.\n\n Nyrh möçberleri: 0,08% - 0,1% (Diňe 1 HÝD kitapçasy üçin)')">Halkara ýük daşamalaryny amala aşyrýan daşaýjylaryň raýat-hukuk jogapkärçiligini ätiýaçlandyryş</div>
+<div class="card" onclick="openModal('Howa uçarlaryndaky ýolagçylary betbagtçylykly hadysalardan ätiýaçlandyryş', 'Howa uçarlaryndaky we dik uçarlaryndaky ýlagçylary we ekipaž agzalary betbagtçylykly hadysalardan ätiýaçlandyryp berýäris.\n\n Nyrh möçberleri: 0,2% - 1% (Gatnaw möhletlerine görä üýtgeýär)')">Howa uçarlaryndaky ýolagçylary betbagtçylykly hadysalardan ätiýaçlandyryş</div>
+<div class="card" onclick="openModal('Hünärmençilik jogapkärçiligini ätiýaçlandyryş', 'Hünärmençilik işi amala aşyrylanda  Üçünji taraplaryň emläk bähbitlerine zyýan ýetirilmeginiň netijesinde ýüze çykýan borçnamalar boýunça raýat jogapkärçiliginiň töwekgelçiligi we kazyýet we arbitraž edaralarynda işler alnyp barlanda hukuk kömegini bermek üçin Ätiýaçlandyryjy bilen ylalaşylan çykdajylaryň töwekgelçiligi, şeýle hem özüniň hünärmençilik işi amala aşyrmagy bilen bagly özüne emläk nägilelikleriniň bildirilmegi netijesinde Ätiýaçlandyrýanyň çeken, Ätiýaçlandyryjy bilen ylalaşylan, bilermenleriň we adwokatlaryň hyzmatlaryň tölegi üçin çykdajylaryň töwekgelçiligini ätiýaçlandyryp berýäris. .\n\n Nyrh möçberi: 0,72%')">Hünärmençilik jogapkärçiligini ätiýaçlandyryş</div>
+<div class="card" onclick="openModal('Ýaşaýş jaýlary ätiýaçlandyryş', 'Siziň ýaşaýyş jaýlaryňyzy ýangyndan, partlamadan, ýyldyrym urmagyndan, tebigy betbagtçylyklardan, ýyladyş, suw geçiriji we lagym ulgamlaryny suw basmagyndan, uçýan enjamlaryň gaçmagyndan, üçünji taraplaryň bilkastlaýyn hereketlerinden we ogurlykdan ätiýaçlandyryp berýäris.\n\n Nyrh möçberleri: 0,1% - 0,5%')">Ýaşaýş jaýlary ätiýaçlandyryş</div>
+<div class="card" onclick="openModal('Ipotekany ätiýaçlandyryş', 'Siziň ipotekada duran ýaşaýyş jaýlaryňyzy ýangyndan, partlamadan, ýyldyrym urmagyndan, tebigy betbagtçylyklardan, ýyladyş, suw geçiriji we lagym ulgamlaryny suw basmagyndan, uçýan enjamlaryň gaçmagyndan, üçünji taraplaryň bilkastlaýyn hereketlerinden we ogurlykdan ätiýaçlandyryp berýäris ätiýaçlandyryp berýäris. .\n\n Nyrh möçberleri: 0,08% - 0,10%')">Ipotekany ätiýaçlandyryş</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+<h2>Habarlaşmak</h2>
+<p>📞 Telefon belgilerimiz: +993 62 50-77-10 | 22-71-94 | 22-71-95</p>
+<p>📧 Email: ebedikepillik@gmail.com</p>
+<p>📍 Salgymyz: Aşgabat şäheri, Türkmenbaşy şaýoly köçesindäki Türkmenistanyň Senagatçylar we Telekeçiler birleşmesiniň 5-nji gaty</p>
+</section>
+
+<footer>
+<p>© 2026 | Tebigat Dünýäsi</p>
+</footer>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 id="modal-title"></h2>
+    <p id="modal-text"></p>
+  </div>
+</div>
+
+<script>
+function openModal(title, text) {
+  document.getElementById('modal').style.display = 'block';
+  document.getElementById('modal-title').innerText = title;
+  document.getElementById('modal-text').innerText = text;
+}
+
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
